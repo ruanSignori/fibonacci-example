@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudos Independentes - Univates 2024</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>Estudos Independentes II <br>
+          Modelagem de Situações Dinâmicas
+        </h1>
+        <p>Realizado por: Ruan Signori, Erick Hunsch e Matheus Royer</p>
+      </div>
+      <div>
+       
+        <div class="flex">
+          <div class="example_fib_expression">
+            <h2>Sequência de Fibonacci</h2>
+            <p>A sequência de Fibonacci é uma série de números inteiros onde cada número (a partir do terceiro) é a soma dos dois anteriores. <br> 
+              Ela começa normalmente com 0 e 1, formando a sequência: <br>
+    
+              <i>0, 1, 1, 2, 3, 5, 8, 13, 21, ... </i><br><br>
+              
+              Matematicamente, a fórmula que define a sequência é: <br>
+              <p>
+                F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub>
+            </p>
+            <p>com os valores iniciais :</p>
+            <div>
+                <p>F<sub>0</sub> = 0</p>
+                <p>F<sub>1</sub> = 1</p>
+            </div>
+          </div>
+          <div class="example_fib_code">
+            <h2>Algoritmo em JavaScript</h2>
+            <img class="fib_code" src="/public/images/fib_code.png" width="800" loading="lazy">
+          </div>
+        </div>
+
+        <div class="input_iteracoes_fib">
+          <h4>Insira o numero de iterações</h4>
+          <input type="number" value="2" id="iteracoes_fib" min="1" max="220">
+          <div>
+            <p class="valores"></p>
+          </div>
+        </div>
+        <canvas id="fibonacciCanvas" width="600" height="600"></canvas>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
