@@ -118,3 +118,9 @@ input {
 img {
   width: 100%;
 }
+
+#canvas-container {
+  border: 2px solid black;
+  width: 800px;
+  height: 600px;
+}
