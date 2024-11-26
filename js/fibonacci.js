@@ -6,8 +6,7 @@ function generateFibonacciSequence(number_iteraction)
       const soma = nums[i - 1] + nums[i - 2];
       nums.push(soma);
     }
-    console.log(nums)
-  
+
     return nums;
 }
 function drawSpiral(ulc, urc, brc, blc, size, nr) {
@@ -143,10 +142,11 @@ function calculatePosition(fibonacciSequence, size, nr)
           ind = 0;
       }
       // drawRectAngle(ulc, size, nr);
-      // drawSpiral(ulc, urc, brc, blc, size, nr)
+      
     }
   
     drawRectAngle(ulc,size,nr)
+    drawSpiral(ulc, urc, brc, blc, size, nr)
 }
 
 function drawRectAngle (ulc, size, nr) 
