@@ -1,7 +1,7 @@
-const INITIAL_ITERACION_FIBONACCI = 3;
+const INITIAL_ITERACION_FIBONACCI = 10;
 
 
-let nr = INITIAL_ITERACION_FIBONACCI;
+let nr = INITIAL_ITERACION_FIBONACCI + 1;
 let fibonacciSequence = generateFibonacciSequence(nr);
 
 document.getElementById("iteracoes_fib").addEventListener("change", function (event) {
