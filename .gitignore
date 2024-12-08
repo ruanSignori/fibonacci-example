@@ -5,3 +5,5 @@ node_modules
 .vscode/*
 dist/
 git 
+
+package-lock.json
