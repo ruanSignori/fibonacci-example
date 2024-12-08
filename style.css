@@ -121,6 +121,34 @@ img {
 
 #canvas-container {
   border: 2px solid black;
-  width: 800px;
+  width: 600px;
   height: 600px;
+}
+
+.container-iteracoes {
+  margin-top: 16px;
+  justify-content: flex-start;
+  gap: 86px;
+}
+
+th, td{
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: left;
+  border: 2px solid #2F2F2F;
+}
+
+thead {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px;
+}
+
+tr, th {
+  padding: 10px 20px;
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }

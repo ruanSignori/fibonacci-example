@@ -45,11 +45,18 @@
 
         <div class="input_iteracoes_fib">
           <h4>Insira o numero de iterações</h4>
-          <input type="number" value="11" id="iteracoes_fib" min="8" max="22">
-          <div>
-            <p class="valores"></p>
-
+          <input type="number" value="8" id="iteracoes_fib" min="8" max="22">
+          <div class="flex container-iteracoes">
             <div id="canvas-container"></div>
+            <table id="fibonacci-table">
+              <thead>
+                <tr>
+                  <th>Iteração</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
         
@@ -255,23 +262,30 @@ function drawRectAngle (ulc, size, nr)
  
 }
 
+const MIN_ITERACTIONS = 8;
+const MAX_ITERACTIONS = 22;
+const INITIAL_ITERACION_FIBONACCI = MIN_ITERACTIONS;
 
+let nr = INITIAL_ITERACION_FIBONACCI;
 
-const INITIAL_ITERACION_FIBONACCI = 10;
-
-
-let nr = INITIAL_ITERACION_FIBONACCI + 1;
-let fibonacciSequence = generateFibonacciSequence(nr);
+let fibonacciSequence = generateFibonacciSequence(INITIAL_ITERACION_FIBONACCI );
+updateFibonacciTable(fibonacciSequence);
 
 document.getElementById("iteracoes_fib").addEventListener("change", function (event) {
-  nr = event.target.value;
+  nr = Number(event.target.value);
+
+  if (nr > MAX_ITERACTIONS || nr < MIN_ITERACTIONS) {
+    return alert(`Digite um número de iterações entre ${MIN_ITERACTIONS} e ${MAX_ITERACTIONS}`)
+  }
 
   fibonacciSequence = generateFibonacciSequence(nr);
+
+  updateFibonacciTable(fibonacciSequence);
   loop();
 });
 
 function setup() {
-  let cnv = createCanvas(800, 600);
+  let cnv = createCanvas(600, 600);
 
   cnv.parent('canvas-container');
 
@@ -281,13 +295,30 @@ function setup() {
 
 function draw() {
   background(11);
-
+  fibonacciSequence = generateFibonacciSequence(nr + 1)
   let size = nr > 1 ? height / (fibonacciSequence[nr - 1] * 1.8) : 0;
+
   calculatePosition(fibonacciSequence, size, nr)
 
   noLoop();
 }
+      function updateFibonacciTable(sequence) {
+        const tableBody = document.querySelector("#fibonacci-table tbody");
+        tableBody.innerHTML = ""; // Limpa a tabela
 
+        sequence.forEach((value, index) => {
+          const row = document.createElement("tr");
+          const iterCell = document.createElement("td");
+          const valueCell = document.createElement("td");
+
+          iterCell.textContent = index;
+          valueCell.textContent = value;
+
+          row.appendChild(iterCell);
+          row.appendChild(valueCell);
+          tableBody.appendChild(row);
+        });
+      }
 
     </script>
   </body>
